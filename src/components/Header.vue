@@ -12,16 +12,16 @@ export default {
 
 <template>
     <header>
-        <div class="head-container d-flex align-items-center justify-content-between">
+        <div class="head-container px-4 d-flex align-items-center justify-content-between">
             <img class="logo" src="../../public/logo-boolflix.png" alt="logo">
-            <div class="cont-input me-2">
+            <div class="cont-input me-2 d-flex">
+                <button class="btn btn-outline-danger me-2" @click="$emit('searchMovie')">Cerca</button>
                 <input 
                 v-model="store.movieSearchTitle"
                 @keyup.enter="$emit('searchMovie')"
                 class="form-control" 
                 type="text" 
                 placeholder="Cerca un film">
-                <button class="btn btn-outline-danger" @click="$emit('searchMovie')">Cerca</button>
             </div>
       </div>
   </header>
@@ -32,7 +32,7 @@ export default {
 @use '../scss/main' as *;
 
 header{
-    background-color: rgb(105, 65, 65);
+    background-color: black;
 }
 .head-container{
     height: 80px;

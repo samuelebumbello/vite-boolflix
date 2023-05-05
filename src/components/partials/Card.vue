@@ -13,17 +13,64 @@ export default {
 
 <template>
     <div class="col mb-5">
-        <div class="pg-card d-flex flex-column">
-            <img :src="`https://image.tmdb.org/t/p/w500${image}`" alt="">
-            <h1>Titolo originale: {{ titleOriginal }}</h1>
-            <h2>Titolo italiano:{{ titleTranslated }}</h2>
-            <span>Lingua: language</span>
-            <span>Media voti:{{ vote }}/10</span>
+        <div class="pg-card d-flex flex-column text-white position-relative overflow-hidden">
+
+            <!-- cont-img -->
+            <div class="container-img w-100">
+                <img class="w-100 h-100 object-fit-contain" :src="`https://image.tmdb.org/t/p/w500${image}`" alt="">
+            </div>
+
+            <!-- cont finestra testo -->
+            <div class="card-text position-absolute w-100 h-100">
+
+                <div class="container-title">
+                    <h1 class="fs-5">Titolo originale: {{ titleOriginal }}</h1>
+                    <h2 class="fs-5">Titolo italiano: {{ titleTranslated }}</h2>
+                </div>
+                <!-- cont lingua -->
+                <div class="container-language">
+                    <span>Lingua:</span>
+                    <img :src="`flags/language-${language}.svg`" :alt="language">
+                </div>
+    
+                <!-- cont voti -->
+                <div class="container-votes">
+                    <span>Media voti: {{ vote }}/10</span>
+                </div>
+                <!-- cont titoli -->
+
+            </div>
+
+
         </div>
     </div>
 </template>
 
 
 <style lang="scss" scoped>
-
+@use '../../scss/main' as *;
+.pg-card{
+    .container-img{
+        transition: all .3s;
+    }
+    .card-text{
+        top: 100%;
+        transition: all .6s;
+    }
+    &:hover{
+        .card-text{
+            top: 0;
+            
+        }
+        .container-img{
+            opacity: 30%;
+        }
+    }
+    .container-language{
+        img{
+            width: 20px;
+            margin-left: 3px;
+        }
+    }
+}
 </style>

@@ -16,15 +16,20 @@ export default {
 
 <template>
     <main>
-        <Card
-        v-for="movie in store.movieResultArray"
-        :key="movie.id"
-        :image="movie.poster_path"
-        :titleOriginal="movie.original_title"
-        :titleTranslated="movie.title"
-        :language="movie.origin_country"
-        :vote="movie.vote_average"
-        />
+        <div class="container py-5">
+            <h1 class="text-white">Film</h1>
+            <div class="row row-cols-6">
+                <Card
+                v-for="movie in store.movieResultArray"
+                :key="movie.id"
+                :image="movie.poster_path"
+                :titleOriginal="movie.original_title"
+                :titleTranslated="movie.title"
+                :language="movie.original_language"
+                :vote="movie.vote_average"
+                />
+            </div>
+        </div>
     </main>
 
 
@@ -34,5 +39,5 @@ export default {
 
 
 <style lang="scss" scoped>
-
+@use '../scss/main' as *;
 </style>

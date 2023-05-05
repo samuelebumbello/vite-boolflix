@@ -4,6 +4,7 @@ import { store } from '../data/store.js';
 import Header from "./components/Header.vue";
 import Main from "./components/Main.vue";
 
+
 export default {
     name: "App",
      components:{
@@ -41,7 +42,13 @@ export default {
 </template>
 
 
-<style lang="scss" scoped>
+<style lang="scss">
 @use './scss/main' as *;
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #141414;
+}
 
 </style>
