@@ -23,6 +23,7 @@ export default {
         }
       })
       .then(result =>{
+        store.movieResultArray = [];
         store.movieResultArray = result.data.results;
         console.log(store.movieResultArray);
       })

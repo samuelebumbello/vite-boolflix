@@ -1,5 +1,5 @@
 <script>
-import { store } from '../../data/store'
+import { store } from '../../data/store';
 export default {
   name: 'Header',
   data(){
@@ -20,8 +20,8 @@ export default {
                 @keyup.enter="$emit('searchMovie')"
                 class="form-control" 
                 type="text" 
-                placeholder="Cerca">
-                <button class="btn btn-danger" @click="$emit('searchMovie')">Cerca</button>
+                placeholder="Cerca un film">
+                <button class="btn btn-outline-danger" @click="$emit('searchMovie')">Cerca</button>
             </div>
       </div>
   </header>
