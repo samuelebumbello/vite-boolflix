@@ -1,6 +1,7 @@
 <script>
 export default {
-
+    name: 'Main',
+  
 }
 </script>
 
@@ -9,6 +10,6 @@ export default {
 </template>
 
 
-<style lang="sss" scoped>
+<style lang="scss" scoped>
 
 </style>
