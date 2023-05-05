@@ -17,6 +17,7 @@ export default {
 <template>
     <main>
         <div class="container py-5">
+            <!-- FILM -->
             <h1 class="text-white">Film</h1>
             <div class="row row-cols-6">
                 <Card
@@ -27,6 +28,19 @@ export default {
                 :titleTranslated="movie.title"
                 :language="movie.original_language"
                 :vote="movie.vote_average"
+                />
+            </div>
+            <!-- SERIE TV -->
+            <h1 class="text-white">Serie TV</h1>
+            <div class="row row-cols-6">
+                <Card
+                v-for="serie in store.seriesResultArray"
+                :key="serie.id"
+                :image="serie.poster_path"
+                :titleOriginal="serie.original_name"
+                :titleTranslated="serie.name"
+                :language="serie.original_language"
+                :vote="serie.vote_average"
                 />
             </div>
         </div>

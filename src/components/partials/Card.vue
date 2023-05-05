@@ -23,6 +23,7 @@ export default {
             <!-- cont finestra testo -->
             <div class="card-text position-absolute w-100 h-100">
 
+                <!-- cont titoli -->
                 <div class="container-title">
                     <h1 class="fs-5">Titolo originale: {{ titleOriginal }}</h1>
                     <h2 class="fs-5">Titolo italiano: {{ titleTranslated }}</h2>
@@ -37,7 +38,6 @@ export default {
                 <div class="container-votes">
                     <span>Media voti: {{ vote }}/10</span>
                 </div>
-                <!-- cont titoli -->
 
             </div>
 

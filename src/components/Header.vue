@@ -15,10 +15,10 @@ export default {
         <div class="head-container px-4 d-flex align-items-center justify-content-between">
             <img class="logo" src="../../public/logo-boolflix.png" alt="logo">
             <div class="cont-input me-2 d-flex">
-                <button class="btn btn-outline-danger me-2" @click="$emit('searchMovie')">Cerca</button>
+                <button class="btn btn-outline-danger me-2" @click="$emit('searchMovie'), $emit('searchSeries')">Cerca</button>
                 <input 
                 v-model="store.movieSearchTitle"
-                @keyup.enter="$emit('searchMovie')"
+                @keyup.enter="$emit('searchMovie'), $emit('searchSeries')"
                 class="form-control" 
                 type="text" 
                 placeholder="Cerca un film">

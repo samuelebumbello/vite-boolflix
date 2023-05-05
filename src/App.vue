@@ -24,21 +24,32 @@ export default {
         }
       })
       .then(result =>{
-        store.movieResultArray = [];
         store.movieResultArray = result.data.results;
         console.log(store.movieResultArray);
+      })
+    },
+    getApiSeries(){
+      axios.get(store.apiUrlSeries, {
+        params:{
+          query: store.movieSearchTitle
+        }
+      })
+      .then(result => {
+        store.seriesResultArray = result.data.results;
+        console.log(store.seriesResultArray);
       })
     }
   },
   mounted(){
     this.getApi();
+    this.getApiSeries();
   }
 }
 </script>
 
 <template>
-  <Header @searchMovie="getApi"/>
-  <Main/>
+  <Header @searchMovie="getApi" @searchSeries="getApiSeries"/>
+  <Main />
 </template>
 
 
