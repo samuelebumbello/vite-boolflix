@@ -30,12 +30,12 @@ export default {
 
 <style lang="scss" scoped>
 @use '../scss/main' as *;
-
-header{
-    background-color: black;
-}
 .head-container{
+    background-color: #141414;
     height: 80px;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
     .logo{
         height: 65px;
         object-fit: contain;

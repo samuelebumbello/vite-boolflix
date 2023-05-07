@@ -12,7 +12,7 @@ export default {
 </script>
 
 <template>
-    <div class="col mb-5">
+    <div class="col mb-4">
         <div class="pg-card d-flex flex-column text-white position-relative overflow-hidden">
 
             <!-- cont-img -->

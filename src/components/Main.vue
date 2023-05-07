@@ -16,9 +16,9 @@ export default {
 
 <template>
     <main>
-        <div class="container py-5">
+        <div class="container">
             <!-- FILM -->
-            <h1 class="text-white">Film</h1>
+            <h1 class="text-white mb-3">Film</h1>
             <div class="row row-cols-6">
                 <Card
                 v-for="movie in store.movieResultArray"
@@ -27,11 +27,11 @@ export default {
                 :titleOriginal="movie.original_title"
                 :titleTranslated="movie.title"
                 :language="movie.original_language"
-                :vote="movie.vote_average"
+                :vote="Math.ceil(movie.vote_average/2)"
                 />
             </div>
             <!-- SERIE TV -->
-            <h1 class="text-white">Serie TV</h1>
+            <h1 class="text-white mb-3">Serie TV</h1>
             <div class="row row-cols-6">
                 <Card
                 v-for="serie in store.seriesResultArray"
@@ -40,7 +40,7 @@ export default {
                 :titleOriginal="serie.original_name"
                 :titleTranslated="serie.name"
                 :language="serie.original_language"
-                :vote="serie.vote_average"
+                :vote="Math.ceil(serie.vote_average/2)"
                 />
             </div>
         </div>
@@ -54,4 +54,12 @@ export default {
 
 <style lang="scss" scoped>
 @use '../scss/main' as *;
+.container{
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+h1{
+    font-size: 60px;
+}
 </style>
