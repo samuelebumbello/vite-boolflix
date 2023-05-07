@@ -36,7 +36,8 @@ export default {
     
                 <!-- cont voti -->
                 <div class="container-votes">
-                    <span>Media voti: {{ vote }}/10</span>
+                    <span>Media voti:</span>
+                    <span v-for="star in vote" :key="star"><i class="fa-solid fa-star" style="color: #D71F2B;"></i></span>
                 </div>
 
             </div>
